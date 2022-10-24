@@ -2,11 +2,18 @@ import { render, screen } from "@testing-library/react";
 import Form from "./Form";
 
 describe("Form", () => {
-  it("render the correct number of inputs", () => {
-    // Arrange
-    const fields = ["email", "password"];
+  it("renders the correct number of inputs", () => {
+    const fields = [
+      { label: "email", type: "email" },
+      { label: "password", type: "password" },
+    ];
+
     render(<Form fields={fields} />);
 
-    const inputs = screen.getAllByRole("");
+    const emailInput = screen.getByLabelText("email");
+    const passwordInput = screen.getByLabelText("password");
+
+    expect(emailInput).toBeInTheDocument();
+    expect(passwordInput).toBeInTheDocument();
   });
 });
