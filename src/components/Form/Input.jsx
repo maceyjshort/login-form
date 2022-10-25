@@ -11,6 +11,7 @@ export default function Input({ label, type }) {
     console.log("name:", nameRef.current.value);
     console.log("email:", emailRef.current.value);
     console.log("message:", messageRef.current.value);
+    // I still don't  understand the error with console.log but whateves...
   }
 
   return (
