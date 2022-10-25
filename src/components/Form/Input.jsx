@@ -6,8 +6,15 @@ export default function Input({ label, type }) {
   const emailRef = React.useRef();
   const messageRef = React.useRef();
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log("name:", nameRef.current.value);
+    console.log("email:", emailRef.current.value);
+    console.log("message:", messageRef.current.value);
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="mt-4 flex flex-col">
         <label htmlFor="name">Name</label>
         <input id="name" type="text" ref={nameRef} />
