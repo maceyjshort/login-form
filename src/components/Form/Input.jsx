@@ -1,11 +1,27 @@
 import PropTypes from "prop-types";
+import React from "react";
 
 export default function Input({ label, type }) {
+  const nameRef = React.useRef();
+  const emailRef = React.useRef();
+  const messageRef = React.useRef();
+
   return (
-    <div className="mt-4 flex flex-col">
-      <label htmlFor={label}>{label}</label>
-      <input type={type} id={label} placeholder={label} />
-    </div>
+    <form>
+      <div className="mt-4 flex flex-col">
+        <label htmlFor="name">Name</label>
+        <input id="name" type="text" ref={nameRef} />
+      </div>
+      <div>
+        <label htmlFor="email">Email</label>
+        <input id="email" type="email" ref={emailRef} />
+      </div>
+      <div>
+        <label htmlFor="message">Message</label>
+        <textarea id="message" ref={messageRef} />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 
