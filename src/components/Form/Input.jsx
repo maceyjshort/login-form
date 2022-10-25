@@ -9,7 +9,7 @@ export default function Input({ label, type }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("name:", name);
+    console.log("name", name);
     console.log("email:", email);
     console.log("message:", message);
   }
@@ -30,7 +30,7 @@ export default function Input({ label, type }) {
           type="email"
           id="email"
           value={email}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="mt-4 flex flex-col">
@@ -57,6 +57,7 @@ Input.defaultProps = {
 
 /** Okay, this might be because I had a long day, but this doesn't make too much sense honestly. I might be placing my controlled HTML form code in the wrong file, but I feel like it should go in the input. That is  my first part of the confusion.
  * Second part, the difference between controlled and uncontrolled... I get the main difference is the fact controlled you tell the code what to display and is easier to do things with than uncontrolled while having more code to type... So simple things you can get away with uncontrolled but more complex things you need controlled. IS that the main part of it?
- *Controlled you need to create a state, does that mean in the uncontrolled you do not?
+ *Controlled you need to create a state, does that mean in the uncontrolled you do not? In further research it looks like uncontrolled i need a ref (which is reference) not state...
+ *React Docs recommend using controlled
  *So I only skimmed this before starting. If I read READ it I would have known it would probably be better in form... or broken up into input and button. Oh well... My bad.
  */
